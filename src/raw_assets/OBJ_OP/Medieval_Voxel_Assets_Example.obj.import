@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dupf5yiv7enqd"
+path="res://.godot/imported/Medieval_Voxel_Assets_Example.obj-640cf1f712db55ddcf9ce43731f2cc41.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Medieval_Voxel_Assets_Example.obj-640cf1f712db55ddcf9ce43731f2cc41.mesh"]
+
+source_file="res://src/raw_assets/OBJ_OP/Medieval_Voxel_Assets_Example.obj"
+dest_files=["res://.godot/imported/Medieval_Voxel_Assets_Example.obj-640cf1f712db55ddcf9ce43731f2cc41.mesh", "res://.godot/imported/Medieval_Voxel_Assets_Example.obj-640cf1f712db55ddcf9ce43731f2cc41.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://jguyhwwhbh34"
+path="res://.godot/imported/Flag_Small_Red.obj-ea0d2bc26772aa397155d882808daddb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Flag_Small_Red.obj-ea0d2bc26772aa397155d882808daddb.mesh"]
+
+source_file="res://src/raw_assets/OBJ_OP/Flags And Banners/Flags/Flag_Small_Red.obj"
+dest_files=["res://.godot/imported/Flag_Small_Red.obj-ea0d2bc26772aa397155d882808daddb.mesh", "res://.godot/imported/Flag_Small_Red.obj-ea0d2bc26772aa397155d882808daddb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

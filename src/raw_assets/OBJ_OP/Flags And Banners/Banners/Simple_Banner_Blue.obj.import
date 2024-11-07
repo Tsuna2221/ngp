@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dh1lwjpwrbh8s"
+path="res://.godot/imported/Simple_Banner_Blue.obj-6b2f1ce62fb406358ec541d5fa28d120.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Simple_Banner_Blue.obj-6b2f1ce62fb406358ec541d5fa28d120.mesh"]
+
+source_file="res://src/raw_assets/OBJ_OP/Flags And Banners/Banners/Simple_Banner_Blue.obj"
+dest_files=["res://.godot/imported/Simple_Banner_Blue.obj-6b2f1ce62fb406358ec541d5fa28d120.mesh", "res://.godot/imported/Simple_Banner_Blue.obj-6b2f1ce62fb406358ec541d5fa28d120.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

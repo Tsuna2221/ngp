@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dt5ssm2m5jfbn"
+path="res://.godot/imported/Flag_Large_Green.obj-d61194313c0d3869cc5440a5017f2d1f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Flag_Large_Green.obj-d61194313c0d3869cc5440a5017f2d1f.mesh"]
+
+source_file="res://src/raw_assets/OBJ_OP/Flags And Banners/Flags/Flag_Large_Green.obj"
+dest_files=["res://.godot/imported/Flag_Large_Green.obj-d61194313c0d3869cc5440a5017f2d1f.mesh", "res://.godot/imported/Flag_Large_Green.obj-d61194313c0d3869cc5440a5017f2d1f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

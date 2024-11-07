@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://sxna0yqskmam"]
+
+[ext_resource type="Script" path="res://src/scripts/scr_world.gd" id="1_wyj43"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7n3w"]
+size = Vector3(0.49, 0.49, 0.49)
+
+[node name="World" type="Node3D"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 1, 0)
+script = ExtResource("1_wyj43")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 75, 75)
+projection = 1
+current = true
+fov = 129.5
+size = 12.072
+near = 0.001
+far = 800.0
+
+[node name="Origin" type="MeshInstance3D" parent="CameraPivot"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+mesh = SubResource("BoxMesh_q7n3w")

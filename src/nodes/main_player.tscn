@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://blfq25hdvnb5p"]
+
+[ext_resource type="Script" path="res://src/scripts/player/player_basic.gd" id="1_x0au5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2cs41"]
+size = Vector3(0.4, 0.4, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l8p0o"]
+size = Vector3(0.4, 0.4, 0.4)
+
+[node name="PlayerNode" type="CharacterBody3D"]
+script = ExtResource("1_x0au5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_2cs41")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_l8p0o")
+
+[node name="CameraRig" type="Marker3D" parent="."]
+top_level = true
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 75, 75)
+projection = 1
+current = true
+size = 12.072
+near = 0.001
+far = 800.0
+
+[node name="Cursor" type="MeshInstance3D" parent="."]
+top_level = true

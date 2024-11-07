@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://62wa6ggsfmuh"
+path="res://.godot/imported/Bridge_Big_In_Out.obj-817ff6d387d6fd165576c9ade4a3c841.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Bridge_Big_In_Out.obj-817ff6d387d6fd165576c9ade4a3c841.mesh"]
+
+source_file="res://src/raw_assets/OBJ_OP/Bridges/Bridge_Big_In_Out.obj"
+dest_files=["res://.godot/imported/Bridge_Big_In_Out.obj-817ff6d387d6fd165576c9ade4a3c841.mesh", "res://.godot/imported/Bridge_Big_In_Out.obj-817ff6d387d6fd165576c9ade4a3c841.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

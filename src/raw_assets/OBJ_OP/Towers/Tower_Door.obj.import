@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cyep6souvv5tf"
+path="res://.godot/imported/Tower_Door.obj-5a9f7c44f27061f24017f3401b59e119.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Tower_Door.obj-5a9f7c44f27061f24017f3401b59e119.mesh"]
+
+source_file="res://src/raw_assets/OBJ_OP/Towers/Tower_Door.obj"
+dest_files=["res://.godot/imported/Tower_Door.obj-5a9f7c44f27061f24017f3401b59e119.mesh", "res://.godot/imported/Tower_Door.obj-5a9f7c44f27061f24017f3401b59e119.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

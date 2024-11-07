@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cjnljayriauxl"
+path="res://.godot/imported/Tower_Window_Large_On.obj-290a7a3e8a72f982ea2c1810b3647947.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Tower_Window_Large_On.obj-290a7a3e8a72f982ea2c1810b3647947.mesh"]
+
+source_file="res://src/raw_assets/OBJ_OP/Towers/Tower_Window_Large_On.obj"
+dest_files=["res://.godot/imported/Tower_Window_Large_On.obj-290a7a3e8a72f982ea2c1810b3647947.mesh", "res://.godot/imported/Tower_Window_Large_On.obj-290a7a3e8a72f982ea2c1810b3647947.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

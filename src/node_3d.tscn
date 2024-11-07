@@ -1,0 +1,181 @@
+[gd_scene load_steps=36 format=3 uid="uid://c0wjbtpb4khqr"]
+
+[ext_resource type="PackedScene" uid="uid://b2dfop0xdae7f" path="res://src/raw_assets/GTLF/Houses/House_1.glb" id="1_18ayc"]
+[ext_resource type="PackedScene" uid="uid://b5ar846tqjppo" path="res://src/raw_assets/plain.glb" id="2_s2ou0"]
+[ext_resource type="Texture2D" uid="uid://ctrg8t2d2s2qj" path="res://src/img/hdri/hdri_pixel_sky_afternoon.jpg" id="3_8li43"]
+[ext_resource type="Shader" path="res://src/shaders/pixel.gdshader" id="3_50o22"]
+[ext_resource type="PackedScene" uid="uid://blfq25hdvnb5p" path="res://src/nodes/main_player.tscn" id="4_tgnyp"]
+[ext_resource type="ArrayMesh" uid="uid://csnf6v5idvh7r" path="res://src/raw_assets/OBJ_OP/Towers/Tower_Complex.obj" id="4_uwug8"]
+[ext_resource type="Resource" uid="uid://cslvcweyejh3c" path="res://addons/SphynxMotionBlurToolkit/PreBlurProcessing/default_camera_movement_component.tres" id="4_xshnt"]
+[ext_resource type="Resource" uid="uid://iru8ynu04i00" path="res://addons/SphynxMotionBlurToolkit/PreBlurProcessing/default_camera_rotation_component.tres" id="5_0ncl6"]
+[ext_resource type="ArrayMesh" uid="uid://buggqnfv3u835" path="res://src/raw_assets/OBJ_OP/Shops/Shop_Closed.obj" id="5_myk7o"]
+[ext_resource type="ArrayMesh" uid="uid://d3eayor3ar33k" path="res://src/raw_assets/OBJ_OP/Houses/House_2.obj" id="6_05wng"]
+[ext_resource type="Resource" uid="uid://rp3mpjmisoyh" path="res://addons/SphynxMotionBlurToolkit/PreBlurProcessing/default_object_movement_component.tres" id="6_ylyrv"]
+[ext_resource type="Resource" uid="uid://c8ulad7utgrg7" path="res://addons/SphynxMotionBlurToolkit/PreBlurProcessing/pre_blur_processing_stage.tres" id="7_ly35y"]
+[ext_resource type="Script" path="res://addons/SphynxMotionBlurToolkit/PreBlurProcessing/pre_blur_processor.gd" id="8_ltnxg"]
+[ext_resource type="Resource" uid="uid://ca45noqewsyvp" path="res://addons/SphynxMotionBlurToolkit/Guertin/guertin_experimental_blur_stage.tres" id="9_hjjfc"]
+[ext_resource type="PackedScene" uid="uid://bsa4mkvbph27s" path="res://src/raw_assets/GTLF/Others/Arc.glb" id="9_ij2a2"]
+[ext_resource type="Resource" uid="uid://cvb65hfs2lrxo" path="res://addons/SphynxMotionBlurToolkit/Guertin/guertin_neighbor_max_stage.tres" id="10_2yrcj"]
+[ext_resource type="PackedScene" uid="uid://cjt4cpgm77buo" path="res://src/raw_assets/GTLF/Lamps/Lamp_Ground_Large.glb" id="10_dywpt"]
+[ext_resource type="Resource" uid="uid://bidsfymvdyhek" path="res://addons/SphynxMotionBlurToolkit/Guertin/guertin_overlay_stage.tres" id="11_0o3wp"]
+[ext_resource type="PackedScene" uid="uid://g4gioqn73ojx" path="res://src/raw_assets/GTLF/Walls/Wall_Ladder.glb" id="11_7r6ji"]
+[ext_resource type="Script" path="res://addons/SphynxMotionBlurToolkit/Guertin/new_guertin_motion_blur.gd" id="12_0pajm"]
+[ext_resource type="PackedScene" uid="uid://buewkwcpwls8a" path="res://src/raw_assets/GTLF/Walls/Wall_Simple.glb" id="12_m066j"]
+[ext_resource type="Resource" uid="uid://dipvwksvqb3dm" path="res://addons/SphynxMotionBlurToolkit/Guertin/guertin_tile_max_x_stage.tres" id="13_5vtrc"]
+[ext_resource type="Resource" uid="uid://bxfg45ubc2pv7" path="res://addons/SphynxMotionBlurToolkit/Guertin/guertin_tile_max_y_stage.tres" id="14_lssnc"]
+[ext_resource type="Resource" uid="uid://bqehecsdgt70s" path="res://addons/SphynxMotionBlurToolkit/Guertin/guertin_tile_variance_stage.tres" id="15_rb4cp"]
+[ext_resource type="Script" path="res://addons/SphynxMotionBlurToolkit/BaseClasses/mb_compositor.gd" id="16_wgt4u"]
+[ext_resource type="PackedScene" uid="uid://csehnspkwfdir" path="res://src/nodes/particles/particle_fire1.tscn" id="18_n53ei"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2dwih"]
+render_priority = 0
+shader = ExtResource("3_50o22")
+shader_parameter/depth_threshold = 0.05
+shader_parameter/reverse_depth_threshold = 0.25
+shader_parameter/normal_threshold = 0.6
+shader_parameter/darken_amount = 0.3
+shader_parameter/lighten_amount = 1.4
+shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
+shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
+
+[sub_resource type="QuadMesh" id="QuadMesh_gr88p"]
+lightmap_size_hint = Vector2i(9602, 5402)
+material = SubResource("ShaderMaterial_2dwih")
+flip_faces = true
+add_uv2 = true
+size = Vector2(1920, 1080)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_h2foj"]
+panorama = ExtResource("3_8li43")
+
+[sub_resource type="Sky" id="Sky_qlvec"]
+sky_material = SubResource("PanoramaSkyMaterial_h2foj")
+
+[sub_resource type="Environment" id="Environment_dw0f1"]
+background_mode = 2
+sky = SubResource("Sky_qlvec")
+ambient_light_source = 3
+tonemap_mode = 3
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+glow_blend_mode = 1
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.003
+volumetric_fog_anisotropy = 0.55
+volumetric_fog_length = 42.0
+volumetric_fog_sky_affect = 0.0
+adjustment_enabled = true
+adjustment_brightness = 1.06
+adjustment_contrast = 0.91
+adjustment_saturation = 1.66
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_kiq3o"]
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_px55h"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+script = ExtResource("8_ltnxg")
+pre_blur_processor_stage = ExtResource("7_ly35y")
+camera_rotation_component = ExtResource("5_0ncl6")
+camera_movement_component = ExtResource("4_xshnt")
+object_movement_component = ExtResource("6_ylyrv")
+debug = false
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_o2baa"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+script = ExtResource("12_0pajm")
+blur_stage = ExtResource("9_hjjfc")
+overlay_stage = ExtResource("11_0o3wp")
+tile_max_x_stage = ExtResource("13_5vtrc")
+tile_max_y_stage = ExtResource("14_lssnc")
+neighbor_max_stage = ExtResource("10_2yrcj")
+tile_variance_stage = ExtResource("15_rb4cp")
+tile_size = 40
+linear_falloff_slope = 1.0
+importance_bias = 40.0
+maximum_jitter_value = 0.95
+minimum_user_threshold = 1.5
+debug = false
+
+[sub_resource type="Compositor" id="Compositor_p2g52"]
+compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_px55h"), SubResource("CompositorEffect_o2baa")])
+script = ExtResource("16_wgt4u")
+samples = 32
+intensity = 1.0
+center_fade = 1.0
+framerate_independent = true
+uncapped_independence = false
+target_constant_framerate = 60.0
+
+[node name="Main" type="Node3D"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
+offset_right = 1920.0
+offset_bottom = 1080.0
+stretch = true
+stretch_shrink = 4
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(480, 270)
+render_target_update_mode = 4
+
+[node name="plain" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_s2ou0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="PostProcessing" type="MeshInstance3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.89968, -0.0881355, 0.427562, -0.288863, 0.614146, 0.734427, -0.327314, -0.784256, 0.527075, -1.29594, 5.34198, 1.90008)
+mesh = SubResource("QuadMesh_gr88p")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
+environment = SubResource("Environment_dw0f1")
+camera_attributes = SubResource("CameraAttributesPractical_kiq3o")
+compositor = SubResource("Compositor_p2g52")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.898688, -0.0182709, 0.438207, -0.244083, 0.809277, 0.534316, -0.364394, -0.587143, 0.722828, 0, 0, 0)
+shadow_enabled = true
+
+[node name="PlayerNode" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_tgnyp")]
+
+[node name="TowerComplex" type="MeshInstance3D" parent="SubViewportContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11762, 0, 7.91447)
+mesh = ExtResource("4_uwug8")
+
+[node name="ShopClosed" type="MeshInstance3D" parent="SubViewportContainer"]
+transform = Transform3D(0.555164, 0, 0.831741, 0, 1, 0, -0.831741, 0, 0.555164, -13.7757, 0.25719, 2.76499)
+mesh = ExtResource("5_myk7o")
+
+[node name="House2" type="MeshInstance3D" parent="SubViewportContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15735, -0.0358253, -14.7836)
+mesh = ExtResource("6_05wng")
+
+[node name="House_12" parent="SubViewportContainer" instance=ExtResource("1_18ayc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7578, 0.00933266, -10.3535)
+
+[node name="Arc2" parent="." instance=ExtResource("9_ij2a2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.700986, -9.53674e-07, 10.0173)
+
+[node name="Lamp_Ground_Large2" parent="." instance=ExtResource("10_dywpt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3269, 0, 20.226)
+
+[node name="Wall_Ladder2" parent="." instance=ExtResource("11_7r6ji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.34578, 0, 15.8064)
+
+[node name="Wall_Simple2" parent="." instance=ExtResource("12_m066j")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.2008, -4.76837e-07, 20.0586)
+
+[node name="ParticleFire1" parent="." instance=ExtResource("18_n53ei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1385, 1.98022, 2.93394)

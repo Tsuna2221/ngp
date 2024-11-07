@@ -1,0 +1,219 @@
+[gd_scene load_steps=35 format=3 uid="uid://c0wjbtpb4khqr"]
+
+[ext_resource type="PackedScene" uid="uid://b2dfop0xdae7f" path="res://src/raw_assets/GTLF/Houses/House_1.glb" id="1_18ayc"]
+[ext_resource type="PackedScene" uid="uid://b5ar846tqjppo" path="res://src/raw_assets/plain.glb" id="2_s2ou0"]
+[ext_resource type="Texture2D" uid="uid://ctrg8t2d2s2qj" path="res://src/img/hdri/hdri_pixel_sky_afternoon.jpg" id="3_8li43"]
+[ext_resource type="Shader" path="res://src/shaders/pixel.gdshader" id="3_50o22"]
+[ext_resource type="PackedScene" uid="uid://blfq25hdvnb5p" path="res://src/nodes/main_player.tscn" id="4_tgnyp"]
+[ext_resource type="Resource" uid="uid://cslvcweyejh3c" path="res://addons/SphynxMotionBlurToolkit/PreBlurProcessing/default_camera_movement_component.tres" id="4_tpxsh"]
+[ext_resource type="ArrayMesh" uid="uid://csnf6v5idvh7r" path="res://src/raw_assets/OBJ_OP/Towers/Tower_Complex.obj" id="4_uwug8"]
+[ext_resource type="ArrayMesh" uid="uid://buggqnfv3u835" path="res://src/raw_assets/OBJ_OP/Shops/Shop_Closed.obj" id="5_myk7o"]
+[ext_resource type="Resource" uid="uid://iru8ynu04i00" path="res://addons/SphynxMotionBlurToolkit/PreBlurProcessing/default_camera_rotation_component.tres" id="5_yh308"]
+[ext_resource type="ArrayMesh" uid="uid://d3eayor3ar33k" path="res://src/raw_assets/OBJ_OP/Houses/House_2.obj" id="6_05wng"]
+[ext_resource type="Resource" uid="uid://rp3mpjmisoyh" path="res://addons/SphynxMotionBlurToolkit/PreBlurProcessing/default_object_movement_component.tres" id="6_a8evl"]
+[ext_resource type="Resource" uid="uid://c8ulad7utgrg7" path="res://addons/SphynxMotionBlurToolkit/PreBlurProcessing/pre_blur_processing_stage.tres" id="7_q3ce4"]
+[ext_resource type="Script" path="res://addons/SphynxMotionBlurToolkit/PreBlurProcessing/pre_blur_processor.gd" id="8_s5seh"]
+[ext_resource type="PackedScene" uid="uid://bsa4mkvbph27s" path="res://src/raw_assets/GTLF/Others/Arc.glb" id="9_ij2a2"]
+[ext_resource type="Resource" uid="uid://bk5yd5plopwi2" path="res://addons/SphynxMotionBlurToolkit/JumpFlood/simple_jf_blur_stage.tres" id="9_wrkod"]
+[ext_resource type="PackedScene" uid="uid://cjt4cpgm77buo" path="res://src/raw_assets/GTLF/Lamps/Lamp_Ground_Large.glb" id="10_dywpt"]
+[ext_resource type="Resource" uid="uid://bj3exhmsfcx4w" path="res://addons/SphynxMotionBlurToolkit/JumpFlood/jf_simple_stage.tres" id="10_tow6g"]
+[ext_resource type="PackedScene" uid="uid://g4gioqn73ojx" path="res://src/raw_assets/GTLF/Walls/Wall_Ladder.glb" id="11_7r6ji"]
+[ext_resource type="Resource" uid="uid://co5k7plgmxepi" path="res://addons/SphynxMotionBlurToolkit/JumpFlood/jump_flood_neighbor_max_stage.tres" id="11_dldjx"]
+[ext_resource type="PackedScene" uid="uid://buewkwcpwls8a" path="res://src/raw_assets/GTLF/Walls/Wall_Simple.glb" id="12_m066j"]
+[ext_resource type="Resource" uid="uid://dc5fr84ue3dn5" path="res://addons/SphynxMotionBlurToolkit/JumpFlood/jump_flood_overlay_stage.tres" id="12_yc6qc"]
+[ext_resource type="Script" path="res://addons/SphynxMotionBlurToolkit/JumpFlood/simple_jf_motion_blur.gd" id="13_6qjt1"]
+[ext_resource type="Resource" uid="uid://c10aboaly701b" path="res://addons/SphynxMotionBlurToolkit/JumpFlood/jump_flood_tile_max_x_stage.tres" id="14_tcct0"]
+[ext_resource type="Resource" uid="uid://cymk87e4nyxva" path="res://addons/SphynxMotionBlurToolkit/JumpFlood/jump_flood_tile_max_y_stage.tres" id="15_v3o6g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2dwih"]
+render_priority = 1
+shader = ExtResource("3_50o22")
+shader_parameter/depth_threshold = 0.05
+shader_parameter/reverse_depth_threshold = 0.25
+shader_parameter/normal_threshold = 0.6
+shader_parameter/darken_amount = 0.3
+shader_parameter/lighten_amount = 1.4
+shader_parameter/normal_edge_bias = Vector3(1, 1, 1)
+shader_parameter/light_direction = Vector3(-0.96, -0.18, 0.2)
+
+[sub_resource type="QuadMesh" id="QuadMesh_gr88p"]
+material = SubResource("ShaderMaterial_2dwih")
+flip_faces = true
+size = Vector2(1920, 1080)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_h2foj"]
+panorama = ExtResource("3_8li43")
+
+[sub_resource type="Sky" id="Sky_qlvec"]
+sky_material = SubResource("PanoramaSkyMaterial_h2foj")
+
+[sub_resource type="Environment" id="Environment_dw0f1"]
+background_mode = 2
+sky = SubResource("Sky_qlvec")
+ambient_light_source = 3
+tonemap_mode = 3
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+glow_blend_mode = 1
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.003
+volumetric_fog_anisotropy = 0.55
+volumetric_fog_length = 42.0
+volumetric_fog_sky_affect = 0.0
+adjustment_enabled = true
+adjustment_brightness = 1.06
+adjustment_contrast = 0.91
+adjustment_saturation = 1.66
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_kiq3o"]
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_uwrwo"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+script = ExtResource("8_s5seh")
+pre_blur_processor_stage = ExtResource("7_q3ce4")
+camera_rotation_component = ExtResource("5_yh308")
+camera_movement_component = ExtResource("4_tpxsh")
+object_movement_component = ExtResource("6_a8evl")
+debug = false
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_or6j0"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+script = ExtResource("13_6qjt1")
+tile_max_x_stage = ExtResource("14_tcct0")
+tile_max_y_stage = ExtResource("15_v3o6g")
+construct_stage = ExtResource("10_tow6g")
+neighbor_max_stage = ExtResource("11_dldjx")
+blur_stage = ExtResource("9_wrkod")
+overlay_stage = ExtResource("12_yc6qc")
+perpen_error_threshold = 0.5
+sample_step_multiplier = 16
+step_exponent_modifier = 1.0
+JFA_pass_count = 3
+debug = false
+
+[sub_resource type="GDScript" id="GDScript_ka6d7"]
+script/source = "extends Compositor
+class_name MotionBlurCompositor
+
+@export_group(\"Motion Blur\")
+# diminishing returns over 16
+@export_range(4, 64) var samples: int = 16 :
+	set(value):
+		for effect in compositor_effects:
+			effect.set(\"samples\", value)
+		samples = value
+# you really don't want this over 0.5, but you can if you want to try
+@export_range(0, 0.5, 0.001, \"or_greater\") var intensity: float = 1 :
+	set(value):
+		for effect in compositor_effects:
+			effect.set(\"intensity\", value)
+		intensity = value
+@export_range(0, 1) var center_fade: float = 0.0 :
+	set(value):
+		for effect in compositor_effects:
+			effect.set(\"center_fade\", value)
+		center_fade = value
+
+## wether this motion blur stays the same intensity below
+## target_constant_framerate
+@export var framerate_independent : bool = true :
+	set(value):
+		for effect in compositor_effects:
+			effect.set(\"framerate_independent\", value)
+		framerate_independent = value
+
+## Description: Removes clamping on motion blur scale to allow framerate independent motion
+## blur to scale longer than realistically possible when render framerate is higher
+## than target framerate.[br][br]
+## [color=yellow]Warning:[/color] Turning this on would allow over-blurring of pixels, which 
+## produces inaccurate results, and would likely cause nausea in players over
+## long exposure durations, use with caution and out of artistic intent
+@export var uncapped_independence : bool = false :
+	set(value):
+		for effect in compositor_effects:
+			effect.set(\"uncapped_independence\", value)
+		uncapped_independence = value
+
+## if framerate_independent is enabled, the blur would simulate 
+## sutter speeds at that framerate, and up.
+@export var target_constant_framerate : float = 30 :
+	set(value):
+		for effect in compositor_effects:
+			effect.set(\"target_constant_framerate\", value)
+		target_constant_framerate = value
+"
+
+[sub_resource type="Compositor" id="Compositor_wypqb"]
+compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_uwrwo"), SubResource("CompositorEffect_or6j0")])
+script = SubResource("GDScript_ka6d7")
+
+[node name="Main" type="Node3D"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
+offset_right = 1920.0
+offset_bottom = 1080.0
+stretch = true
+stretch_shrink = 4
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(480, 270)
+render_target_update_mode = 4
+
+[node name="plain" parent="SubViewportContainer/SubViewport" instance=ExtResource("2_s2ou0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="PostProcessing" type="MeshInstance3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.89968, -0.0881355, 0.427562, -0.288863, 0.614146, 0.734427, -0.327314, -0.784256, 0.527075, -1.29594, 5.34198, 1.90008)
+mesh = SubResource("QuadMesh_gr88p")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
+environment = SubResource("Environment_dw0f1")
+camera_attributes = SubResource("CameraAttributesPractical_kiq3o")
+compositor = SubResource("Compositor_wypqb")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.898688, -0.0182709, 0.438207, -0.244083, 0.809277, 0.534316, -0.364394, -0.587143, 0.722828, 0, 0, 0)
+shadow_enabled = true
+
+[node name="PlayerNode" parent="SubViewportContainer/SubViewport" instance=ExtResource("4_tgnyp")]
+
+[node name="TowerComplex" type="MeshInstance3D" parent="SubViewportContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11762, 0, 7.91447)
+mesh = ExtResource("4_uwug8")
+
+[node name="ShopClosed" type="MeshInstance3D" parent="SubViewportContainer"]
+transform = Transform3D(0.555164, 0, 0.831741, 0, 1, 0, -0.831741, 0, 0.555164, -13.7757, 0.25719, 2.76499)
+mesh = ExtResource("5_myk7o")
+
+[node name="House2" type="MeshInstance3D" parent="SubViewportContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15735, -0.0358253, -14.7836)
+mesh = ExtResource("6_05wng")
+
+[node name="House_12" parent="SubViewportContainer" instance=ExtResource("1_18ayc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7578, 0.00933266, -10.3535)
+
+[node name="Arc2" parent="." instance=ExtResource("9_ij2a2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.700986, -9.53674e-07, 10.0173)
+
+[node name="Lamp_Ground_Large2" parent="." instance=ExtResource("10_dywpt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3269, 0, 20.226)
+
+[node name="Wall_Ladder2" parent="." instance=ExtResource("11_7r6ji")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.34578, 0, 15.8064)
+
+[node name="Wall_Simple2" parent="." instance=ExtResource("12_m066j")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.2008, -4.76837e-07, 20.0586)

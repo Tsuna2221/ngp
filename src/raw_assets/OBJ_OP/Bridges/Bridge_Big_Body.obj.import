@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c21osya4i1mhh"
+path="res://.godot/imported/Bridge_Big_Body.obj-be1cd007099036315ab9a88149066184.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Bridge_Big_Body.obj-be1cd007099036315ab9a88149066184.mesh"]
+
+source_file="res://src/raw_assets/OBJ_OP/Bridges/Bridge_Big_Body.obj"
+dest_files=["res://.godot/imported/Bridge_Big_Body.obj-be1cd007099036315ab9a88149066184.mesh", "res://.godot/imported/Bridge_Big_Body.obj-be1cd007099036315ab9a88149066184.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

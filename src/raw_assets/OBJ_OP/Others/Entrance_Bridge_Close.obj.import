@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b2r53r1m2i0t0"
+path="res://.godot/imported/Entrance_Bridge_Close.obj-f7b99c14388e5b5113c826888a4f76b4.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Entrance_Bridge_Close.obj-f7b99c14388e5b5113c826888a4f76b4.mesh"]
+
+source_file="res://src/raw_assets/OBJ_OP/Others/Entrance_Bridge_Close.obj"
+dest_files=["res://.godot/imported/Entrance_Bridge_Close.obj-f7b99c14388e5b5113c826888a4f76b4.mesh", "res://.godot/imported/Entrance_Bridge_Close.obj-f7b99c14388e5b5113c826888a4f76b4.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

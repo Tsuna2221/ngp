@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ch2xj6irdfgwo"
+path="res://.godot/imported/Wall_Simple.obj-609d6b5a2ea4b95bb4116eaf3a1cef47.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Wall_Simple.obj-609d6b5a2ea4b95bb4116eaf3a1cef47.mesh"]
+
+source_file="res://src/raw_assets/OBJ_OP/Walls/Wall_Simple.obj"
+dest_files=["res://.godot/imported/Wall_Simple.obj-609d6b5a2ea4b95bb4116eaf3a1cef47.mesh", "res://.godot/imported/Wall_Simple.obj-609d6b5a2ea4b95bb4116eaf3a1cef47.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
