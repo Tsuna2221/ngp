@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://mplmb33e6ltl"]
+
+[ext_resource type="PackedScene" uid="uid://b5ar846tqjppo" path="res://src/raw_assets/plain.glb" id="1_viyl7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hsh70"]
+size = Vector3(43.6553, 1, 43.4062)
+
+[node name="PlainMesh" type="Area3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0415955, -0.575013, -9.15527e-05)
+shape = SubResource("BoxShape3D_hsh70")
+
+[node name="plain" parent="CollisionShape3D" instance=ExtResource("1_viyl7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0415955, 0.575013, 9.15527e-05)

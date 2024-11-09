@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://quq2yppwymkb"
+uid="uid://c1b4i30yfacfh"
 path.s3tc="res://.godot/imported/Simple_Banner_Green_Simple_Banner_Green.png-754447bdb31280a0721d2f3ff2793976.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "71a8f2860df92de939d065907f245162"
 }
 
 [deps]

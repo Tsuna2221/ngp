@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rlspwe0hj14s"
+uid="uid://cb4iujht50gj8"
 path.s3tc="res://.godot/imported/Medieval_Voxel_Assets_Example_Base_Banner_Red.png-e743d1e58ce26eb541fc53bd9b6a133c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "f5f23039ea4d3f8ae502eff800f527f9"
 }
 
 [deps]

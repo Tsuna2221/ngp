@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsqujbujqyc8e"]
+
+[ext_resource type="PackedScene" uid="uid://16iu10wxub40" path="res://src/nodes/player/sophia_skin/model/sophia.glb" id="1_05ikd"]
+
+[node name="sophia" instance=ExtResource("1_05ikd")]

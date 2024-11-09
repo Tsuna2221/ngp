@@ -5,11 +5,13 @@ extends CharacterBody3D
 @export var gravity = 80
 @export var camera_rotation_speed = 60
 
-var move_direction = Vector3()
+
 @onready var camera = $CameraRig/Camera3D
 @onready var camera_rig = $CameraRig
-@onready var cursor= $Cursor
+@onready var cursor = $Cursor
 
+var move_direction = Vector3()
+var move_input = Vector3.ZERO
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -61,8 +63,13 @@ func look_at_cursor():
 
 
 func run(delta):
-	move_direction = Vector3()
 	var camera_basis = camera_rig.transform.basis.z.normalized() * 0.03
+	move_input.x = Input.get_action_strength("left_stick_r") - Input.get_action_strength("left_stick_l");
+	move_input.z = Input.get_action_strength("left_stick_u") - Input.get_action_strength("left_stick_d");
+	
+	print(camera_basis)
+	
+	move_direction = Vector3()
 	
 	if Input.is_key_pressed(KEY_W):
 		move_direction += -camera_basis
@@ -76,4 +83,4 @@ func run(delta):
 	move_direction.y = 0
 	move_direction = move_direction.normalized()
 	
-	velocity += move_direction*speed*delta
+	velocity += Vector3(camera_basis.x + move_input.x, 0, camera_basis.z - move_input.z)*speed*delta
